@@ -1,11 +1,12 @@
 :root {
-    --color-black: #111;
-    --color-dark: #303030;
-    --color-dark-gray: #5e5e5e;
-    --color-gray: #919191;
-    --color-white: #f9f9f9;
-    --color-bright: #faf7ff;
-    --color-primary: #fffd00;
+    --black: #111;
+    --dark: #252525;
+    --dark-gray: #5e5e5e;
+    --gray: #919191;
+    --white: #f9f9f9;
+    --bright: #faf7ff;
+    --primary: #fffd00;
+    --transition: all 0.2s ease;
 
     & *,
     & *::before,
@@ -56,9 +57,9 @@ body {
 /* Header and Footer layout */
 #header,
 #footer {
-    background-color: var(--color-black);
     display: grid;
     justify-content: center;
+    align-items: center;
     padding: 1rem;
     min-width: 100%;
 }
@@ -66,7 +67,7 @@ body {
 /* Header */
 #header {
     font-size: 1.25rem;
-    color: var(--color-white);
+    color: var(--white);
 }
 
 /* Container Flex Center Y */
@@ -74,6 +75,7 @@ body {
 .footer-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
 }
 
@@ -81,7 +83,10 @@ body {
 .header-container,
 .fa-book,
 .h1,
-.footer-link {
+.footer-link,
+.table-body tr,
+.table-header,
+.button {
     transition: var(--transition);
 }
 
@@ -90,11 +95,115 @@ body {
 .header-container .fa-book:hover,
 .h1:hover,
 .footer-link:hover {
-    color: var(--color-primary);
-    text-shadow: 0 0 2px var(--color-primary);
+    color: var(--primary);
+    text-shadow: 0 0 2px var(--primary);
 }
+
+/* Main */
+#main {
+    padding: 2rem 1rem;
+    display: grid;
+}
+
+.main-container {
+    border: 2px solid var(--gray);
+    background-color: var(--gray);
+    box-shadow: 2px 2px 5px var(--black);
+    display: grid;
+    grid-template-rows: auto auto;
+    align-content: space-between;
+}
+
+/* Table */
+.table {
+    text-align: left;
+    border-collapse: collapse;
+    color: var(--white);
+    text-shadow: 0 0 2px var(--white);
+    min-width: 100%;
+}
+
+.table-head {
+    background-color: var(--black);
+    cursor: pointer;
+}
+
+.table-body tr:nth-child(odd) {
+    background-color: var(--dark-gray);
+}
+
+.table-body tr:nth-child(even) {
+    background-color: var(--dark);
+}
+
+.table-body tr:hover {
+    opacity: 0.9;
+}
+
+.table-header:hover {
+    background-color: var(--dark);
+
+}
+
+.table-header,
+.table-data {
+    padding: 0.25rem 1rem;
+}
+
+.title{
+    width: 40%;
+}
+
+.author,
+.pages,
+.status{
+    width: 20%;
+}
+
+.table-text {
+    cursor: pointer;
+    color: var(--white);
+}
+
+.table-text:hover,
+.table-header:hover {
+    color: var(--primary);
+    text-shadow: 0 0 2px var(--primary);
+}
+
+.table-editing {
+    border-top: 2px solid;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    gap: 1rem;
+}
+
+/* Buttons */
+.button {
+    padding: 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    border: 2px solid var(--black);
+    background-color: var(--primary);
+    color: var(--black);
+    box-shadow: 0 0 2px var(--black);
+}
+
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 2px 1px var(--black);
+}
+
 /* Footer */
+#footer {
+    background-color: var(--black);
+}
+
 #footer,
 .footer-link {
-    color: var(--color-gray);
+    color: var(--gray);
 }
