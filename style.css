@@ -1,4 +1,9 @@
 :root {
+    --color-dark: #303030;
+    --color-bright: #ffffff;
+    --color-gray: #5e5e5e;
+    --color-primary: #fffd00;
+    --color-secondary: #00fff9;
 
     & *,
     & *::before,
@@ -18,4 +23,37 @@
 body {
     min-width: 100%;
     min-height: 100%;
+    overflow: hidden;
+    background-color: var(--color-dark);
+}
+
+.footer-link,
+.fa-solid,
+.text {
+    color: var(--color-bright);
+}
+
+#page-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    justify-items: center;
+}
+
+#header,
+#main,
+#footer {
+    min-width: 1200px;
+}
+
+.header-container,
+.main-container,
+.footer-container {
+    min-height: 100%;
+    border-inline: 1px solid var(--color-gray);    
+}
+
+.main-container {
+    border: 1px solid var(--color-gray);
 }
