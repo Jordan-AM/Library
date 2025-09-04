@@ -1,9 +1,12 @@
 :root {
+    --color-black: #111;
+    --color-white: #f9f9f9;
     --color-dark: #303030;
-    --color-bright: #ffffff;
+    --color-bright: #f6f6f6;
     --color-gray: #5e5e5e;
     --color-primary: #fffd00;
     --color-secondary: #00fff9;
+    --transition: all 0.2s ease;
 
     & *,
     & *::before,
@@ -27,12 +30,7 @@ body {
     background-color: var(--color-dark);
 }
 
-.footer-link,
-.fa-solid,
-.text {
-    color: var(--color-bright);
-}
-
+/* Page Container */
 #page-container {
     display: grid;
     min-height: 100vh;
@@ -41,6 +39,7 @@ body {
     justify-items: center;
 }
 
+/* Duplicated attrs */
 #header,
 #main,
 #footer {
@@ -51,9 +50,25 @@ body {
 .main-container,
 .footer-container {
     min-height: 100%;
-    border-inline: 1px solid var(--color-gray);    
 }
 
-.main-container {
-    border: 1px solid var(--color-gray);
+/* Header Section */
+#header{
+    background-color: var(--color-black);
+    color: var(--color-bright);
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+    min-width: 100%;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.header-container:hover {
+    color: var(--color-primary);
 }
