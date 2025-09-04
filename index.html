@@ -4,10 +4,58 @@
     <meta charset="UTF-8" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/b6768a6760.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Library</title>
   </head>
   <body>
+    <div id="page-container">
+      <header id="header">
+        <section class="header-container">
+          <i class="fa-solid fa-book"></i>
+          <h1 class="text h1">Personal Library</h1>
+        </section>
+      </header>
+      <main id="main">
+        <section class="main-container">
+          <table class="table">
+            <thead class="table-head">
+              <tr>
+                <th class="table-header title text">Title</th>
+                <th class="table-header author text">Author</th>
+                <th class="table-header pages text">Pages</th>
+                <th class="table-header status text">Status</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+              <tr>
+                <td class="table-data title text">The Art of War</td>
+                <td class="table-data author text">Sun Tzu</td>
+                <td class="table-data pages text">200</td>
+                <td class="table-data status text">No</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-editing">
+            <button class="new-book text button">New Book</button>
+            <button class="edit-book text button">Edit Book</button>
+            <button class="delete-book text button">Delete Book</button>
+          </div>
+        </section>
+      </main>
+      <footer id="footer">
+        <section class="footer-container">
+          <i class="fa-solid fa-book"></i>
+          <p class="para-footer text">
+            Library by
+            <span class="text">
+              <a class="footer-link" href="https://github.com/Jordan-AM">&copy; Jordan</a>
+            </span>
+            2025
+          </p>
+        </section>
+      </footer>
+    </div>
     <script src="script.js" async defer></script>
   </body>
 </html>
