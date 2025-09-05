@@ -81,13 +81,7 @@ body {
 }
 
 /* Transition */
-.header-container,
-.fa-book,
-.h1,
-.footer-link,
-.table-body tr,
-.table-header,
-.button {
+.transition{
   transition: var(--transition);
 }
 
@@ -95,9 +89,17 @@ body {
 .header-container:hover,
 .header-container .fa-book:hover,
 .h1:hover,
-.footer-link:hover {
+.footer-link:hover,
+h2.transition:hover {
   color: var(--primary);
-  text-shadow: 0 0 2px var(--primary);
+  text-shadow: 0 0 2px var(--black);
+}
+
+.fa-book{
+  transition: all 0.5s ease;
+}
+.fa-book:hover{
+  transform: rotateZ(360deg) scale(1.5);
 }
 
 /* Main */
@@ -109,7 +111,7 @@ body {
 .main-container {
   border: 2px solid var(--gray);
   background-color: var(--gray);
-  box-shadow: 0px 0px 5px 1px var(--black);
+  box-shadow: 0 0 2px 1px var(--dark-gray);
   display: grid;
   grid-template-rows: auto auto;
   align-content: space-between;
@@ -122,7 +124,6 @@ body {
   border-collapse: collapse;
   color: var(--white);
   text-shadow: 0 0 2px var(--white);
-  min-width: 100%;
 }
 
 .table-head {
@@ -161,6 +162,7 @@ body {
 }
 
 .table-text {
+
   cursor: pointer;
   color: var(--white);
 }
@@ -171,14 +173,33 @@ body {
   text-shadow: 0 0 2px var(--primary);
 }
 
+.action{
+  background-color: var(--gray);
+}
+
+.remove-btn.button.transition,
+.edit-btn.button.transition{
+  border: 1px solid ;
+  border-radius: 0.2rem;
+  padding: 0.25rem;
+  /* background-color: transparent; */
+  transition: var(--transition);
+}
+
+.remove-btn.button.transition:hover,
+.edit-btn.button.transition:hover{
+  background-color: var(--primary);
+  color: var(--black);
+}
+
 .table-editing {
-  border-top: 2px solid;
+  border-top: 2px solid var(--dark-gray);
   padding: 0.5rem;
   display: flex;
   justify-content: end;
-  align-items: end;
+  align-items: center;
   gap: 1rem;
-  background-color: var(--dark);
+  background-color: var(--dark-gray);
 }
 
 /* Buttons */
@@ -188,14 +209,15 @@ body {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  border: solid;
-  background-color: var(--primary);
-  color: var(--black);
-  box-shadow: 0 0 2px 2px var(--primary);
+  color: var(--primary);
+  border: 3px solid var(--primary);
+  background-color: var(--black);
 }
 
 .button:hover {
-  transform: scale(1.05);
+  color: var(--black);
+  border-color: var(--black);
+  background-color: var(--primary);
 }
 
 /* Overlay backdrop */
@@ -205,7 +227,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5); /* Matches dialog::backdrop */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,17 +236,19 @@ body {
 
 /* Modal box */
 .modal {
-  padding: 2rem 1rem; /* Matches dialog padding */
-  border: 1px solid;
+  padding: 2rem 1rem;
+  border: 3px solid var(--dark);
   border-radius: 15px;
-  box-shadow: 0 0 2px 3px var(--dark), 0 0 2px 6px var(--white);
+  box-shadow: 0 0 2px 3px var(--white);
   width: 300px;
   max-width: 90%;
-  background-color: var(--bright);
+  color: var(--bright);
+  background-color: var(--dark-gray);
 }
 
 /* Form layout */
-#bookForm {
+#form,
+#editForm {
   padding-right: 1rem;
   display: flex;
   flex-direction: column;
@@ -233,25 +257,33 @@ body {
 }
 
 /* Label styling */
-#bookForm label {
+#form label,
+#editForm label {
   font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
+  gap: 0.25rem;
 }
 
 /* Input styling */
-#bookForm input,
-#bookForm select {
+#form label input,
+#form label select,
+#editForm label input,
+#editForm label select {
   padding: 0.25rem;
-  border-radius: 0.25rem;
-  color: var(--bright);
-  background-color: var(--gray);
+  color: var(--dark);
+  background-color: var(--bright);
   width: 100%;
   box-sizing: border-box;
+  border: 3px solid transparent;
+  outline: none;
+}
+
+#form label input:focus,
+#editForm label input:focus{
   border: solid;
-  border-radius: 0.5rem;
 }
 
 /* Button container */
@@ -268,15 +300,15 @@ body {
   font-size: 1rem;
   cursor: pointer;
   border-radius: 0.5rem;
-  border: solid;
-  background-color: var(--black);
   color: var(--primary);
-  box-shadow: 0 0 2px 2px var(--black);
-  transition: var(--transition);
+  background-color: var(--black);
+  border: 2px solid var(--primary);
 }
 
 .modal-buttons button:hover {
-  transform: scale(1.05);
+  color: var(--black);
+  border-color: var(--black);
+  background-color: var(--primary);
 }
 
 /* Footer */
