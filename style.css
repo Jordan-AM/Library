@@ -81,7 +81,7 @@ body {
 }
 
 /* Transition */
-.transition{
+.transition {
   transition: var(--transition);
 }
 
@@ -95,10 +95,10 @@ h2.transition:hover {
   text-shadow: 0 0 2px var(--black);
 }
 
-.fa-book{
+.fa-book {
   transition: all 0.5s ease;
 }
-.fa-book:hover{
+.fa-book:hover {
   transform: rotateZ(360deg) scale(1.5);
 }
 
@@ -162,8 +162,6 @@ h2.transition:hover {
 }
 
 .table-text {
-
-  cursor: pointer;
   color: var(--white);
 }
 
@@ -173,13 +171,13 @@ h2.transition:hover {
   text-shadow: 0 0 2px var(--primary);
 }
 
-.action{
+.action {
   background-color: var(--gray);
 }
 
 .remove-btn.button.transition,
-.edit-btn.button.transition{
-  border: 1px solid ;
+.edit-btn.button.transition {
+  border: 1px solid;
   border-radius: 0.2rem;
   padding: 0.25rem;
   /* background-color: transparent; */
@@ -187,7 +185,7 @@ h2.transition:hover {
 }
 
 .remove-btn.button.transition:hover,
-.edit-btn.button.transition:hover{
+.edit-btn.button.transition:hover {
   background-color: var(--primary);
   color: var(--black);
 }
@@ -282,7 +280,7 @@ h2.transition:hover {
 }
 
 #form label input:focus,
-#editForm label input:focus{
+#editForm label input:focus {
   border: solid;
 }
 
