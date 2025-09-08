@@ -6,6 +6,9 @@ class Book {
     this.Status = status;
     this.ID = crypto.randomUUID();
   }
+  get summary() {
+    return `${this.Title} by ${this.Author}, ${this.Pages} pages.`;
+  }
 }
 
 const myLibrary = [
@@ -15,11 +18,6 @@ const myLibrary = [
 ];
 
 // Functions--------------------------------------------
-function addBookToLibrary(title, author, pages, status) {
-  const book = new Book(title, author, pages, status);
-  myLibrary.push(book);
-}
-
 function renderLibrary() {
   const tableBody = document.querySelector(".table-body");
   tableBody.innerHTML = "";
@@ -116,6 +114,7 @@ function handleFormSubmit(e) {
   );
 
   myLibrary.push(newBook);
+  console.log(newBook.summary)
   renderLibrary();
   closeModal();
 }
